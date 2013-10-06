@@ -14,7 +14,7 @@ SRC_URI="http://www.hackenberger.at/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug +highlight"
+IUSE="debug +highlight_black"
 
 #DEPEND="x11-libs/qt-gui:4
 DEPEND="dev-qt/qtgui:4
