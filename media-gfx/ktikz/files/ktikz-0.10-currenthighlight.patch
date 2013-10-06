@@ -1,0 +1,29 @@
+--- ktikz/app/tikzeditor.cpp	2010-10-13 21:41:45.000000000 +0100
++++ ktikz/app/tikzeditor.cpp	2013-08-15 11:15:01.154310312 +0100
+@@ -67,6 +67,7 @@
+ 		m_highlightCurrentLineColor = lineColor.darker(105);
+ 	else
+ 		m_highlightCurrentLineColor = altLineColor;
++  m_highlightCurrentLineColor = lineColor.darker(0);
+ 	connect(this, SIGNAL(cursorPositionChanged()), this, SLOT(highlightCurrentLine()));
+ 	highlightCurrentLine();
+ 
+@@ -321,12 +322,13 @@
+ void TikzEditor::paintEvent(QPaintEvent *event)
+ {
+ 	QPainter painter(viewport());
+-
++  const QColor lineColor(QApplication::style()->standardPalette().color(QPalette::Normal, QPalette::Base));
+ 	// highlight current line
+-	QRect rect = cursorRect();
+-	rect.setX(0);
+-	rect.setWidth(viewport()->width());
+-	painter.fillRect(rect, QBrush(m_highlightCurrentLineColor));
++ 	QRect rect = cursorRect();
++ 	rect.setX(0);
++ 	rect.setWidth(viewport()->width());
++ 	//painter.fillRect(rect, QBrush(m_highlightCurrentLineColor));
++  painter.fillRect(rect, QBrush(lineColor.black() ));
+ 
+ 	// show white spaces and tabulators
+ 	if (m_showWhiteSpaces || m_showTabulators)
