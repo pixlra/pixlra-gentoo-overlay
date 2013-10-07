@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit eutils qt4-r2
+inherit eutils qt4-r2 cmake-utils
 
 MY_P="${PN}_${PV}"
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.hackenberger.at/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug highlight_black"
+IUSE="kde debug highlight_black"
 
 #DEPEND="x11-libs/qt-gui:4
 DEPEND="dev-qt/qtgui:4
@@ -43,6 +43,11 @@ src_prepare() {
 }
 
 src_configure() {
-	KDECONFIG="CONFIG-=usekde"
-	eqmake4 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+	if use kde; then
+	    local mycmakeargs=( -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` )
+	    cmake-utils_src_configure
+	else
+	    KDECONFIG="CONFIG-=usekde"
+	    eqmake4 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+	fi
 }
