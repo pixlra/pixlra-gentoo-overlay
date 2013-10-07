@@ -4,17 +4,23 @@
 
 EAPI="4"
 
-inherit eutils qt4-r2
+inherit eutils qt4-r2 git-2
 
 MY_P="${PN}_${PV}"
 
 DESCRIPTION="A QT4-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
-SRC_URI="http://www.hackenberger.at/${PN}/${MY_P}.tar.gz"
+
+# SRC_URI="http://www.hackenberger.at/${PN}/${MY_P}.tar.gz"
+EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
+EGIT_COMMIT="${PV}"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug highlight_black"
+IUSE="debug"
+
+
 
 #DEPEND="x11-libs/qt-gui:4
 DEPEND="dev-qt/qtgui:4
@@ -29,12 +35,11 @@ DOCS="Changelog TODO"
 
 S="${WORKDIR}/${PN}"
 
+src_unpack() {
+	git-2_src_unpack
+}
+
 src_prepare() {
-	
-	# patch some diffs
-	if use highlight; then
-	    epatch "${FILESDIR}/${PN}-${PV}-currenthighlight.patch"
-	fi 
 	# libs are not equal ldflags, make that sure:
 	sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
 
