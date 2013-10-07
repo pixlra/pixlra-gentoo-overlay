@@ -51,3 +51,20 @@ src_configure() {
 	    eqmake4 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
 	fi
 }
+
+src_compile() {
+	if use kde; then
+	    cmake-utils_src_compile
+	else
+	    qt4-r2_src_compile
+	fi
+}
+
+src_install() {
+	if use kde; then
+	    cmake-utils_src_install
+	else
+	    qt4-r2_src_install
+	fi
+	
+}

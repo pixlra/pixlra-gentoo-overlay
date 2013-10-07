@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit eutils qt4-r2 git-2 cmake-utils
+inherit eutils qt4-r2 cmake-utils git-2
 
 MY_P="${PN}_${PV}"
 
@@ -37,20 +37,16 @@ S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	git-2_src_unpack
-	
-	# libs are not equal ldflags, make that sure:
-	sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
-
-	# our lrelease is not versioned
-	sed -i -e 's|lrelease-qt4|lrelease|' conf.pri || die "sed failed"
 }
 
 src_prepare() {
-	# libs are not equal ldflags, make that sure:
-	sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
+	if ! use kde; then
+	    # libs are not equal ldflags, make that sure:
+	    sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
 
-	# our lrelease is not versioned
-	sed -i -e 's|lrelease-qt4|lrelease|' conf.pri || die "sed failed"
+	    # our lrelease is not versioned
+	    sed -i -e 's|lrelease-qt4|lrelease|' conf.pri || die "sed failed"
+	fi
 }
 
 src_configure() {
@@ -61,4 +57,21 @@ src_configure() {
 	    KDECONFIG="CONFIG-=usekde"
 	    eqmake4 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
 	fi
+}
+
+src_compile() {
+	if use kde; then
+	    cmake-utils_src_compile
+	else
+	    qt4-r2_src_compile
+	fi
+}
+
+src_install() {
+	if use kde; then
+	    cmake-utils_src_install
+	else
+	    qt4-r2_src_install
+	fi
+	
 }
