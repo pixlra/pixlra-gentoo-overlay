@@ -19,54 +19,54 @@ KEYWORDS="~amd64 ~ppc ~x86 ~amd64-fbsd ~amd64-linux"
 IUSE="cuda doc eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k opencl openexr opengl pch png qt4 testprograms threads tiff v4l xine"
 
 RDEPEND="
-	app-arch/bzip2
-	dev-python/numpy
-	sys-libs/zlib
-	cuda? ( >=dev-util/nvidia-cuda-toolkit-4.2 )
-	eigen? ( dev-cpp/eigen:2 )
-	ffmpeg? ( virtual/ffmpeg )
-	gstreamer? (
-		media-libs/gstreamer:0.10
-		media-libs/gst-plugins-base:0.10
-	)
-	gtk? (
-		dev-libs/glib:2
-		x11-libs/gtk+:2
-	)
-	java? ( >=virtual/jre-1.6 )
-	jpeg? ( virtual/jpeg )
-	jpeg2k? ( media-libs/jasper )
-	ieee1394? (
-		media-libs/libdc1394
-		sys-libs/libraw1394
-	)
-	ipp? ( sci-libs/ipp )
-	opencl? ( virtual/opencl )
-	openexr? ( media-libs/openexr )
-	opengl? ( virtual/glu )
-	png? ( media-libs/libpng:0= )
-	qt4? (
-		dev-qt/qtgui:4
-		dev-qt/qttest:4
-		opengl? ( dev-qt/qtopengl:4 )
-	)
-	threads? ( dev-cpp/tbb )
-	tiff? ( media-libs/tiff )
-	v4l? ( >=media-libs/libv4l-0.8.3 )
-	xine? ( media-libs/xine-lib )
+  app-arch/bzip2
+  dev-python/numpy
+  sys-libs/zlib
+  cuda? ( >=dev-util/nvidia-cuda-toolkit-5.5 )
+  eigen? ( dev-cpp/eigen:2 )
+  ffmpeg? ( virtual/ffmpeg )
+  gstreamer? (
+    media-libs/gstreamer:0.10
+    media-libs/gst-plugins-base:0.10
+  )
+  gtk? (
+    dev-libs/glib:2
+    x11-libs/gtk+:2
+  )
+  java? ( >=virtual/jre-1.6 )
+  jpeg? ( virtual/jpeg )
+  jpeg2k? ( media-libs/jasper )
+  ieee1394? (
+    media-libs/libdc1394
+    sys-libs/libraw1394
+  )
+  ipp? ( sci-libs/ipp )
+  opencl? ( virtual/opencl )
+  openexr? ( media-libs/openexr )
+  opengl? ( virtual/glu )
+  png? ( media-libs/libpng:0= )
+  qt4? (
+    dev-qt/qtgui:4
+    dev-qt/qttest:4
+    opengl? ( dev-qt/qtopengl:4 )
+  )
+  threads? ( dev-cpp/tbb )
+  tiff? ( media-libs/tiff )
+  v4l? ( >=media-libs/libv4l-0.8.3 )
+  xine? ( media-libs/xine-lib )
 "
 DEPEND="${RDEPEND}
-	virtual/pkgconfig
-	java? ( >=virtual/jdk-1.6 )
+  virtual/pkgconfig
+  java? ( >=virtual/jdk-1.6 )
 "
 
 # REQUIRED_USE="opengl? ( qt )"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-2.3.1a-libav-0.7.patch"
-	"${FILESDIR}/${PN}-2.4.3-gcc47.patch"
-	"${FILESDIR}/${PN}-2.4.2-cflags.patch"
-	"${FILESDIR}/${PN}-2.4.5-javamagic.patch"
+  "${FILESDIR}/${PN}-2.3.1a-libav-0.7.patch"
+  "${FILESDIR}/${PN}-2.4.3-gcc47.patch"
+  "${FILESDIR}/${PN}-2.4.2-cflags.patch"
+  "${FILESDIR}/${PN}-2.4.5-javamagic.patch"
 )
 
 src_unpack() {
