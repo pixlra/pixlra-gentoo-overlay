@@ -69,12 +69,12 @@ DEPEND="${RDEPEND}
   java? ( >=virtual/jdk-1.6 )
 "
 
-# PATCHES=(
-#   "${FILESDIR}/${PN}-2.3.1a-libav-0.7.patch"
-#   "${FILESDIR}/${PN}-2.4.3-gcc47.patch"
-#   "${FILESDIR}/${PN}-2.4.2-cflags.patch"
-#   "${FILESDIR}/${PN}-2.4.5-javamagic.patch"
-# )
+PATCHES=(
+  "${FILESDIR}/${PN}-2.3.1a-libav-0.7.patch"
+  "${FILESDIR}/${PN}-2.4.3-gcc47.patch"
+  "${FILESDIR}/${PN}-2.4.2-cflags.patch"
+  "${FILESDIR}/${PN}-2.4.8-javamagic.patch"
+)
 
 src_unpack() {
 	git-2_src_unpack
