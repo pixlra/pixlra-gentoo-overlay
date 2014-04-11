@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/pixlra/playuver.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="kde -qt4 -ffmpeg -opencv debug"
+IUSE="kde qt5 -qt4 -ffmpeg -opencv debug"
 
 DEPEND="
   qt5? (
@@ -34,7 +34,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 REQUIRED_USE="
-  qt4? ( !qt5 )
   qt5? ( !qt4 )
 "
 
