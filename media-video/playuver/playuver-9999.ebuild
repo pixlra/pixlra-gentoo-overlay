@@ -27,7 +27,7 @@ DEPEND="
     dev-qt/qtcore:4
     dev-qt/qtgui:4
   )
-  media-video/ffmpeg
+  ffmpeg? ( media-video/ffmpeg )
   opencv? ( media-libs/opencv )
 "
   
