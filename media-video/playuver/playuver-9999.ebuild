@@ -35,6 +35,7 @@ RDEPEND="${DEPEND}"
 
 REQUIRED_USE="
   qt5? ( !qt4 )
+  qt5? ( !opencv )
 "
 
 S="${WORKDIR}/${PN}"
@@ -43,26 +44,17 @@ src_unpack() {
 	git-2_src_unpack
 }
 
-# src_prepare() {
-#   base_src_prepare
-# }
-
 src_configure() {
   local mycmakeargs=(
-    $(cmake-utils_use_use qt4) # ffmpeg
-    $(cmake-utils_use_use ffmpeg) # ffmpeg
-    $(cmake-utils_use_use opencv) # ffmpeg
+    $(cmake-utils_use_use qt4) # use qt5
+    $(cmake-utils_use_use ffmpeg) # support ffmpeg
+    $(cmake-utils_use_use opencv) # support opencv
   )
   if use kde; then
     mycmakeargs+=( -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` )
   fi
+  if use debug; then
+    mycmakeargs+=( -DCMAKE_BUILD_TYPE=Debug )
+  fi
   cmake-utils_src_configure
 }
-
-src_compile() {
-  cmake-utils_src_compile
-}
-
-# src_install() {
-#   cmake-utils_src_install
-# }
