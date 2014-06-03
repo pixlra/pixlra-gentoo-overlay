@@ -10,11 +10,11 @@ DESCRIPTION="plaYUVer is an open-source QT based raw video player"
 HOMEPAGE="https://github.com/pixlra/playuver"
 
 EGIT_REPO_URI="https://github.com/pixlra/playuver.git"
-EGIT_MASTER="devel"
+EGIT_MASTER="master"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="kde qt5 -qt4 -ffmpeg -opencv debug"
 
 DEPEND="
