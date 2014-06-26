@@ -15,7 +15,7 @@ EGIT_MASTER="devel"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="kde qt5 -qt4 -ffmpeg -opencv debug"
+IUSE="-debug kde qt5 -qt4 -ffmpeg -opencv install_libs"
 
 DEPEND="
   qt5? (
@@ -55,6 +55,11 @@ src_configure() {
   fi
   if use debug; then
     mycmakeargs+=( -DCMAKE_BUILD_TYPE=Debug )
+  fi
+  if use install_libs; then
+    mycmakeargs+=( -DPLAYUVER_INSTALL_LIBS=ON )
+  else
+    mycmakeargs+=( -DPLAYUVER_INSTALL_LIBS=OFF )
   fi
   cmake-utils_src_configure
 }
