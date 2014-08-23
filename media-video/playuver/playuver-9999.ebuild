@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 inherit eutils qt4-r2 cmake-utils git-2
 
@@ -28,14 +28,13 @@ DEPEND="
     dev-qt/qtgui:4
   )
   ffmpeg? ( media-video/ffmpeg )
-  opencv? ( media-libs/opencv )
+  opencv? ( qt5? ( media-libs/opencv[-qt4] ) !qt5? (  media-libs/opencv ) )
 "
   
 RDEPEND="${DEPEND}"
 
 REQUIRED_USE="
-  qt5? ( !qt4 )
-  qt5? ( !opencv )
+  ?? ( qt5 qt4 )
 "
 
 S="${WORKDIR}/${PN}"
