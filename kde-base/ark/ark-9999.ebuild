@@ -7,6 +7,7 @@ EAPI=5
 KDE_HANDBOOK="optional"
 inherit kde5
 
+EGIT_BRANCH=frameworks
 DESCRIPTION="KDE Archiving tool"
 HOMEPAGE="http://www.kde.org/applications/utilities/ark
 http://utils.kde.org/projects/ark"
