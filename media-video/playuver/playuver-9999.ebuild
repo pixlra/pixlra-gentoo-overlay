@@ -49,9 +49,6 @@ src_configure() {
     $(cmake-utils_use_use ffmpeg) # support ffmpeg
     $(cmake-utils_use_use opencv) # support opencv
   )
-  if use kde; then
-    mycmakeargs+=( -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` )
-  fi
   if use debug; then
     mycmakeargs+=( -DCMAKE_BUILD_TYPE=Debug )
   fi
