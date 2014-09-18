@@ -60,18 +60,18 @@ src_configure() {
 	fi
 }
 
-src_compile() {
-	if use kde; then
-	    cmake-utils_src_compile
-	else
-	    qt5_src_compile
-	fi
-}
-
-src_install() {
-	if use kde; then
-	    cmake-utils_src_install
-	else
-	    qt5_src_install
-	fi
-}
+# src_compile() {
+# 	if use kde; then
+# 	    cmake-utils_src_compile
+# 	else
+# 	    qt5_src_compile
+# 	fi  
+# }
+# 
+# src_install() {
+# 	if use kde; then
+# 	    cmake-utils_src_install
+# 	else
+# 	    qt5_src_install
+# 	fi
+# }
