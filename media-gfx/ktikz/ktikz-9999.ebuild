@@ -4,13 +4,12 @@
 
 EAPI=5
 
-inherit eutils cmake-utils git-2 qmake-utils
+inherit eutils cmake-utils qmake-utils git-2
 
 DESCRIPTION="A QT5-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
 
 EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
-EGIT_BRANCH="frameworks"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -36,17 +35,13 @@ DOCS="Changelog TODO"
 
 S="${WORKDIR}/${PN}"
 
-src_unpack() {
-	git-2_src_unpack
-}
-
 src_prepare() {
 	if ! use kde; then
 	    # libs are not equal ldflags, make that sure:
 	    sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
 
-	    # our lrelease is not versioned
-	    sed -i -e 's|lrelease-qt4|lrelease|' conf.pri || die "sed failed"
+# 	    # our lrelease is not versioned
+# 	    sed -i -e 's|lrelease-qt4|lrelease|' conf.pri || die "sed failed"
 	fi
 }
 
@@ -60,18 +55,20 @@ src_configure() {
 	fi
 }
 
+
 src_compile() {
-# 	if use kde; then
-	    cmake-utils_src_compile
-# 	else
-# 	    qt5_src_compile
-# 	fi  
+    if use kde; then
+      cmake-utils_src_compile
+    else
+      default
+    fi
 }
 
 src_install() {
-# 	if use kde; then
-	    cmake-utils_src_install
-# 	else
-# 	    qt5_src_install
-# 	fi
+    if use kde; then
+      cmake-utils_src_install
+    else
+      emake INSTALL_ROOT="${D}" install
+    fi
 }
+
