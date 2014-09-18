@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
 # EGIT_COMMIT="${PV}"
 
 LICENSE="GPL-2"
-SLOT="5"
+SLOT="0"
 KEYWORDS=""
 IUSE="+kde -debug"
 
