@@ -28,7 +28,9 @@ DEPEND="
     dev-tex/pgf
 "
 	
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+    !media-gfx/ktikz:4
+"
 
 DOCS="Changelog TODO"
 
