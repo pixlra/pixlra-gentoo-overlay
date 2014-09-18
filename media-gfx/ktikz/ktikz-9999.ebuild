@@ -10,7 +10,7 @@ DESCRIPTION="A QT5-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
 
 EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
-# EGIT_COMMIT="${PV}"
+EGIT_BRANCH="frameworks"
 
 LICENSE="GPL-2"
 SLOT="0"
