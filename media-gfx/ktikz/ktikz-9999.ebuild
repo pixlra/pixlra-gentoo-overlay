@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils cmake-utils git-2
+inherit eutils cmake-utils git-2 qmake-utils
 
 DESCRIPTION="A QT5-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
@@ -49,27 +49,27 @@ src_prepare() {
 }
 
 src_configure() {
-# 	if use kde; then
+	if use kde; then
 	    local mycmakeargs=( -DCMAKE_INSTALL_PREFIX=`kde5-config --prefix` )
 	    cmake-utils_src_configure
-#   else
-# 	    KDECONFIG="CONFIG-=usekde"
-# 	    eqmake5 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
-# 	fi
+  else
+	    KDECONFIG="CONFIG-=usekde"
+	    eqmake5 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+	fi
 }
 
 src_compile() {
-# 	if use kde; then
+	if use kde; then
 	    cmake-utils_src_compile
-# 	else
-# 	    qt5_src_compile
-# 	fi
+	else
+	    qt5_src_compile
+	fi
 }
 
 src_install() {
-# 	if use kde; then
+	if use kde; then
 	    cmake-utils_src_install
-# 	else
-# 	    qt5_src_install
-# 	fi
+	else
+	    qt5_src_install
+	fi
 }
