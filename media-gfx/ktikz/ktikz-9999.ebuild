@@ -46,13 +46,12 @@ src_prepare() {
 }
 
 src_configure() {
-	if use kde; then
-	    local mycmakeargs=( -DCMAKE_INSTALL_PREFIX=`kde5-config --prefix` )
-	    cmake-utils_src_configure
+  if use kde; then
+    cmake-utils_src_configure
   else
-	    KDECONFIG="CONFIG-=usekde"
-	    eqmake5 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
-	fi
+    KDECONFIG="CONFIG-=usekde"
+    eqmake5 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+  fi
 }
 
 
