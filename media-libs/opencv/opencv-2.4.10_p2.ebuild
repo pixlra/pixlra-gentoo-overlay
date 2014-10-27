@@ -1,16 +1,16 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 2014 Joao Carreira
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/opencv/opencv-2.4.9.ebuild,v 1.1 2014/06/14 21:44:07 dilfridge Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_{6,7} )
 
-inherit base toolchain-funcs cmake-utils python-single-r1 java-pkg-opt-2 java-ant-2
+inherit base toolchain-funcs cmake-utils python-single-r1 java-pkg-opt-2 java-ant-2 git-2
 
 DESCRIPTION="A collection of algorithms and sample code for various computer vision problems"
 HOMEPAGE="http://opencv.willowgarage.com"
-
-SRC_URI="mirror://sourceforge/opencvlibrary/opencv-unix/${PV}/${P}.zip"
+HOMEPAGE="http://opencv.willowgarage.com"
+EGIT_REPO_URI="https://github.com/jfmcarreira/opencv.git"
+EGIT_COMMIT="${PV}"
 
 LICENSE="BSD"
 SLOT="0/2.4"
