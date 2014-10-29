@@ -10,7 +10,7 @@ DESCRIPTION="A collection of algorithms and sample code for various computer vis
 HOMEPAGE="http://opencv.willowgarage.com"
 HOMEPAGE="http://opencv.willowgarage.com"
 EGIT_REPO_URI="https://github.com/jfmcarreira/opencv.git"
-EGIT_COMMIT="${PV}"
+EGIT_COMMIT="2.4.10_p2"
 
 LICENSE="BSD"
 SLOT="0/2.4"
