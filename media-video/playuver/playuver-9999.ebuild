@@ -15,7 +15,7 @@ EGIT_MASTER="master"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="-debug kde qt5 -qt4 -ffmpeg -opencv"
+IUSE="-debug kde +qt5 -qt4 ffmpeg opencv"
 
 DEPEND="
   qt5? (
