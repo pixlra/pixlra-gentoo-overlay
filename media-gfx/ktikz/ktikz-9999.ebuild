@@ -26,7 +26,7 @@ DEPEND="
     dev-texlive/texlive-latexextra
     dev-tex/pgf
 "
-	
+
 RDEPEND="${DEPEND}
     !media-gfx/ktikz:4
 "

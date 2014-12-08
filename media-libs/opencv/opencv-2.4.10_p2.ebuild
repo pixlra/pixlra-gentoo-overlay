@@ -1,6 +1,7 @@
 # Copyright 2014 Joao Carreira
 # Distributed under the terms of the GNU General Public License v2
 
+
 EAPI=5
 PYTHON_COMPAT=( python2_{6,7} )
 
@@ -8,9 +9,8 @@ inherit base toolchain-funcs cmake-utils python-single-r1 java-pkg-opt-2 java-an
 
 DESCRIPTION="A collection of algorithms and sample code for various computer vision problems"
 HOMEPAGE="http://opencv.willowgarage.com"
-HOMEPAGE="http://opencv.willowgarage.com"
-EGIT_REPO_URI="https://github.com/jfmcarreira/opencv.git"
-EGIT_COMMIT="2.4.10_p2"
+
+EGIT_REPO_URI="https://github.com/jfmcarreira/opencv.git" EGIT_COMMIT="2.4.10_p2"
 
 LICENSE="BSD"
 SLOT="0/2.4"
@@ -83,6 +83,8 @@ PATCHES=(
 	"${FILESDIR}/${PN}-2.4.3-gcc47.patch"
 	"${FILESDIR}/${PN}-2.4.2-cflags.patch"
 	"${FILESDIR}/${PN}-2.4.8-javamagic.patch"
+	"${FILESDIR}/${PN}-2.4.9-cuda.patch"
+	"${FILESDIR}/${PN}-2.4.9-libav10.patch"
 )
 
 pkg_setup() {

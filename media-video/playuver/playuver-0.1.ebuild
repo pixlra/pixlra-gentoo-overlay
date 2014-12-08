@@ -15,7 +15,7 @@ EGIT_COMMIT="${PV}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="-debug kde qt5 -qt4 -ffmpeg -opencv"
+IUSE="-debug qt5 -qt4 -ffmpeg -opencv"
 
 DEPEND="
   qt5? (
@@ -30,7 +30,7 @@ DEPEND="
   ffmpeg? ( media-video/ffmpeg )
   opencv? ( qt5? ( media-libs/opencv[-qt4] ) !qt5? ( media-libs/opencv[-qt5] ) )
 "
-  
+
 RDEPEND="${DEPEND}"
 
 REQUIRED_USE="
