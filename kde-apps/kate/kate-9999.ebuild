@@ -7,7 +7,7 @@ EAPI=5
 KDE_HANDBOOK="optional"
 inherit kde5
 
-EGIT_REPO_URI="https://github.com/pixlra/kate.git"
+EGIT_REPO_URI="https://github.com/jfmcarreira/kate.git"
 
 DESCRIPTION="Kate is an advanced text editor"
 HOMEPAGE="http://www.kde.org/applications/utilities/kate http://kate-editor.org"
