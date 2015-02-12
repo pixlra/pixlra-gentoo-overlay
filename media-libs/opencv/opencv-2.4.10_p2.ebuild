@@ -10,7 +10,8 @@ inherit base toolchain-funcs cmake-utils python-single-r1 java-pkg-opt-2 java-an
 DESCRIPTION="A collection of algorithms and sample code for various computer vision problems"
 HOMEPAGE="http://opencv.willowgarage.com"
 
-EGIT_REPO_URI="https://github.com/jfmcarreira/opencv.git" EGIT_COMMIT="2.4.10_p2"
+EGIT_REPO_URI="https://github.com/jfmcarreira/opencv.git"
+EGIT_COMMIT="2.4.10_p2"
 
 LICENSE="BSD"
 SLOT="0/2.4"
