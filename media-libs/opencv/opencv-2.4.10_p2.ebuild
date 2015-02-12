@@ -5,7 +5,7 @@
 EAPI=5
 PYTHON_COMPAT=( python2_{6,7} )
 
-inherit base toolchain-funcs cmake-utils python-single-r1 java-pkg-opt-2 java-ant-2 git-2
+inherit base toolchain-funcs cmake-utils python-single-r1 java-pkg-opt-2 java-ant-2 git-r3
 
 DESCRIPTION="A collection of algorithms and sample code for various computer vision problems"
 HOMEPAGE="http://opencv.willowgarage.com"
