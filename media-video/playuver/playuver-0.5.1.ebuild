@@ -40,7 +40,7 @@ REQUIRED_USE="
   ?? ( qt5 qt4 )
 "
 
-S="${WORKDIR}/${PN}"
+# S="${WORKDIR}/${PN}"
 
 src_configure() {
   local mycmakeargs=(
