@@ -42,10 +42,6 @@ REQUIRED_USE="
 
 S="${WORKDIR}/${PN}"
 
-src_unpack() {
-	git-2_src_unpack
-}
-
 src_configure() {
   local mycmakeargs=(
     $(cmake-utils_use_use qt4) # use qt5
