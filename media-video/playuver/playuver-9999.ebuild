@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit eutils qt4-r2 cmake-utils git-2
+inherit eutils cmake-utils git-r3
 
 DESCRIPTION="plaYUVer is an open-source QT based raw video player"
 HOMEPAGE="https://github.com/pixlra/playuver"
@@ -15,19 +15,22 @@ EGIT_MASTER="master"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="-debug +qt5 -qt4 ffmpeg opencv"
+IUSE="+qt5 -qt4 ffmpeg opencv"
 
 DEPEND="
   qt5? (
     dev-qt/qtcore:5
     dev-qt/qtgui:5
     dev-qt/qtwidgets:5
+	dev-qt/qtprintsupport:5
+	dev-qt/qtdbus:5
   )
   qt4? (
     dev-qt/qtcore:4
     dev-qt/qtgui:4
+	dev-qt/qtdbus:4
   )
-  ffmpeg? ( media-video/ffmpeg )
+  ffmpeg? ( virtual/ffmpeg )
   opencv? ( qt5? ( media-libs/opencv[-qt4] ) !qt5? ( media-libs/opencv[-qt5] ) )
 "
 
@@ -49,8 +52,5 @@ src_configure() {
     $(cmake-utils_use_use ffmpeg) # support ffmpeg
     $(cmake-utils_use_use opencv) # support opencv
   )
-  if use debug; then
-    mycmakeargs+=( -DCMAKE_BUILD_TYPE=Debug )
-  fi
   cmake-utils_src_configure
 }
