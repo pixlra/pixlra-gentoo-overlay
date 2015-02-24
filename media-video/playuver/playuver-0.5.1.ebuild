@@ -14,7 +14,7 @@ EGIT_COMMIT="${PV}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="+qt5 -qt4 ffmpeg opencv"
 
 DEPEND="
