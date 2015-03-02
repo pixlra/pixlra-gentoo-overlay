@@ -15,8 +15,10 @@ EGIT_BRANCH="master"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="+qt5 -qt4 ffmpeg opencv"
-X86_CPU_FEATURES=="sse"
+
+X86_CPU_FEATURES="cpu_flags_x86_sse"
+IUSE="+qt5 -qt4 ffmpeg opencv $X86_CPU_FEATURES"
+
 
 DEPEND="
   qt5? (
