@@ -46,7 +46,7 @@ REQUIRED_USE="
 
 src_configure() {
   local mycmakeargs=(
-    $(cmake-utils_use_use cpu_flags_x86_sse) # use SSE
+    $(cmake-utils_use_use cpu_flags_x86_sse SSE) # use SSE
     $(cmake-utils_use_use qt4) # use qt5
     $(cmake-utils_use_use ffmpeg) # support ffmpeg
     $(cmake-utils_use_use opencv) # support opencv
