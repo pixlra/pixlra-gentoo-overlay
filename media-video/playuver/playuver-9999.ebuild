@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="+qt5 -qt4 ffmpeg opencv"
-X86_CPU_REQUIRED_USE="cpu_flags_x86_sse"
+X86_CPU_FEATURES=="sse"
 
 DEPEND="
   qt5? (
