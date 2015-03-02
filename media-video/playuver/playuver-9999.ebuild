@@ -16,6 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="+qt5 -qt4 ffmpeg opencv"
+X86_CPU_REQUIRED_USE="cpu_flags_x86_sse"
 
 DEPEND="
   qt5? (
@@ -43,6 +44,7 @@ REQUIRED_USE="
 
 src_configure() {
   local mycmakeargs=(
+    $(cmake-utils_use_use cpu_flags_x86_sse) # use SSE
     $(cmake-utils_use_use qt4) # use qt5
     $(cmake-utils_use_use ffmpeg) # support ffmpeg
     $(cmake-utils_use_use opencv) # support opencv
