@@ -10,15 +10,12 @@ DESCRIPTION="plaYUVer is an open-source QT based raw video player"
 HOMEPAGE="https://github.com/pixlra/playuver"
 
 EGIT_REPO_URI="https://github.com/pixlra/playuver.git"
-EGIT_BRANCH="master"
+EGIT_COMMIT="${PV}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
-
-X86_CPU_FEATURES="cpu_flags_x86_sse"
-IUSE="+qt5 -qt4 ffmpeg opencv $X86_CPU_FEATURES"
-
+KEYWORDS="~amd64"
+IUSE="+qt5 -qt4 ffmpeg opencv"
 
 DEPEND="
   qt5? (
@@ -44,10 +41,10 @@ REQUIRED_USE="
   ?? ( qt5 qt4 )
 "
 
+# S="${WORKDIR}/${PN}"
 
 src_configure() {
   local mycmakeargs=(
-    $(cmake-utils_use_use cpu_flags_x86_sse SSE) # use SSE
     $(cmake-utils_use_use qt4) # use qt5
     $(cmake-utils_use_use ffmpeg) # support ffmpeg
     $(cmake-utils_use_use opencv) # support opencv
