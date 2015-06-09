@@ -7,7 +7,7 @@ EAPI=5
 KDE_DOC_DIRS="doc"
 KDE_HANDBOOK="optional"
 MY_P=${P/_beta/b}
-inherit kde4-meta
+inherit kde4-base
 
 DESCRIPTION="A Latex Editor and TeX shell for KDE"
 HOMEPAGE="http://kile.sourceforge.net/"
