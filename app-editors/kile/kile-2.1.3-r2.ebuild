@@ -7,7 +7,7 @@ EAPI=5
 KDE_DOC_DIRS="doc"
 KDE_HANDBOOK="optional"
 MY_P=${P/_beta/b}
-inherit kde4-base
+inherit kde4-meta
 
 DESCRIPTION="A Latex Editor and TeX shell for KDE"
 HOMEPAGE="http://kile.sourceforge.net/"
@@ -22,9 +22,9 @@ DEPEND="
 	x11-misc/shared-mime-info
 "
 RDEPEND="${DEPEND}
-	$(add_kdebase_dep kdebase-data)
+	$(add_kdeapps_dep kdebase-data)
 	|| (
-		$(add_kdebase_dep okular 'pdf?,postscript')
+		$(add_kdeapps_dep okular 'pdf?,postscript')
 		app-text/acroread
 	)
 	virtual/latex-base
