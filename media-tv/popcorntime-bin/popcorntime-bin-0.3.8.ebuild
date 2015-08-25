@@ -27,8 +27,15 @@ RDEPEND="dev-libs/nss
 S="${WORKDIR}"
 
 src_install() {
+
 	exeinto /opt/${PN}
 	doexe Popcorn-Time libffmpegsumo.so nw.pak package.json
+
+
+    insinto /opt/${PN}
+	doins package.json icudtl.dat
+	doins -r src node_modules locales
+
 
 	dosym /$(get_libdir)/libudev.so.1 /opt/${PN}/libudev.so.0
 	make_wrapper ${PN} ./Popcorn-Time /opt/${PN} /opt/${PN} /opt/bin
