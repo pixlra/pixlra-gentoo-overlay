@@ -11,6 +11,6 @@ HOMEPAGE="https://github.com/jfmcarreira/kde-breeze"
 KEYWORDS=""
 
 EGIT_REPO_URI="https://github.com/jfmcarreira/kde-breeze.git"
-DEPEND="$(add_plasma_dep kbreeze)"
+DEPEND=">=kde-plasma/breeze-5.4.0"
 RDEPEND="${DEPEND}"
 
