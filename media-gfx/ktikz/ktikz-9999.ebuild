@@ -47,16 +47,6 @@ DOCS="Changelog TODO"
 
 S="${WORKDIR}/${PN}"
 
-src_prepare() {
-	if ! use kde; then
-	    # libs are not equal ldflags, make that sure:
-	    sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
-
-# 	    # our lrelease is not versioned
-# 	    sed -i -e 's|lrelease-qt4|lrelease|' conf.pri || die "sed failed"
-	fi
-}
-
 src_configure() {
   if use kde; then
     cmake-utils_src_configure
