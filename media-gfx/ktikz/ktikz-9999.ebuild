@@ -55,11 +55,10 @@ src_configure() {
     if use qt4; then
       eqmake4 qtikz.pro "CONFIG+=nostrip" "$KDECONFIG"
     else
-      eqmake5 qtikz.pro
+      eqmake5 qtikz.pro "$KDECONFIG"
     fi
   fi
 }
-
 
 src_compile() {
     if use kde; then
@@ -73,7 +72,7 @@ src_install() {
     if use kde; then
       cmake-utils_src_install
     else
-      default
+      emake INSTALL_ROOT="${D}" PREFIX="${EPREFIX}/usr" install
     fi
 }
 
