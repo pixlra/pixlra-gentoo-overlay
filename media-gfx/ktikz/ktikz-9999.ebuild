@@ -73,7 +73,7 @@ src_install() {
     if use kde; then
       cmake-utils_src_install
     else
-      emake INSTALL_ROOT="${D}" install
+      default
     fi
 }
 
