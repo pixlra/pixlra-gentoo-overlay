@@ -14,22 +14,34 @@ EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="+kde -debug"
+IUSE="qt4 qt5 +kde -debug"
 
-#DEPEND="x11-libs/qt-gui:4
+REQUIRED_USE="
+  ?? ( qt5 qt4 )
+  kde? ( qt4 )
+"
+
 DEPEND="
+  qt5? (
+    dev-qt/qtcore:5
     dev-qt/qtgui:5
     dev-qt/qtwidgets:5
-    dev-qt/qthelp:5
+    dev-qt/qtprintsupport:5
     app-text/poppler[qt5]
-    virtual/latex-base
-    dev-texlive/texlive-latexextra
-    dev-tex/pgf
+  )
+  qt4? (
+    dev-qt/qtcore:4
+    dev-qt/qtgui:4
+    app-text/poppler[qt4]
+  )
+  kde? (
+    kde-base/kdelibs
+  )
+  virtual/latex-base
+  dev-texlive/texlive-latexextra
+  dev-tex/pgf
 "
-
-RDEPEND="${DEPEND}
-    !media-gfx/ktikz:4
-"
+RDEPEND="${DEPEND}"
 
 DOCS="Changelog TODO"
 
@@ -50,7 +62,11 @@ src_configure() {
     cmake-utils_src_configure
   else
     KDECONFIG="CONFIG-=usekde"
-    eqmake5 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+    if use qt4; then
+      eqmake4 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+    else
+      eqmake5 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+    fi
   fi
 }
 
