@@ -53,9 +53,9 @@ src_configure() {
   else
     KDECONFIG="CONFIG-=usekde"
     if use qt4; then
-      eqmake4 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+      eqmake4 qtikz.pro "CONFIG+=nostrip" "$KDECONFIG"
     else
-      eqmake5 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+      eqmake5 qtikz.pro
     fi
   fi
 }
