@@ -27,11 +27,13 @@ DEPEND="
     dev-qt/qtgui:5
     dev-qt/qtwidgets:5
     dev-qt/qtprintsupport:5
+	dev-qt/qthelp:5
     app-text/poppler[qt5]
   )
   qt4? (
     dev-qt/qtcore:4
     dev-qt/qtgui:4
+	dev-qt/qthelp:4
     app-text/poppler[qt4]
   )
   kde? (
