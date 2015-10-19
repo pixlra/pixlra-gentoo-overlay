@@ -12,30 +12,15 @@ HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
 EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="4"
 KEYWORDS=""
-IUSE="qt4 qt5 +kde -debug"
-
-REQUIRED_USE="
-  ?? ( qt5 qt4 )
-  kde? ( qt4 )
-"
+IUSE="+kde -debug"
 
 DEPEND="
-  qt5? (
-    dev-qt/qtcore:5
-    dev-qt/qtgui:5
-    dev-qt/qtwidgets:5
-    dev-qt/qtprintsupport:5
-	dev-qt/qthelp:5
-    app-text/poppler[qt5]
-  )
-  qt4? (
-    dev-qt/qtcore:4
-    dev-qt/qtgui:4
+	dev-qt/qtcore:4
+	dev-qt/qtgui:4
 	dev-qt/qthelp:4
-    app-text/poppler[qt4]
-  )
+	app-text/poppler[qt4]
   kde? (
     kde-base/kdelibs
   )
@@ -54,11 +39,7 @@ src_configure() {
     cmake-utils_src_configure
   else
     KDECONFIG="CONFIG-=usekde"
-    if use qt4; then
-      eqmake4 qtikz.pro "CONFIG+=nostrip" "$KDECONFIG"
-    else
-      eqmake5 qtikz.pro "$KDECONFIG"
-    fi
+    eqmake4 qtikz.pro "CONFIG+=nostrip" "$KDECONFIG"
   fi
 }
 
