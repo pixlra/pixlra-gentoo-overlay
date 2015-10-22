@@ -4,12 +4,17 @@
 
 EAPI=5
 
-inherit eutils fdo-mime multilib
+inherit eutils fdo-mime multilib versionator
 
 DESCRIPTION="Watch torrent movies instantly"
 HOMEPAGE="http://popcorn.cdnjd.com/"
-SRC_URI="x86?   ( http://get.popcorntime.io/build/Popcorn-Time-${PV}-3-Linux-32.tar.xz )
-		 amd64? ( http://get.popcorntime.io/build/Popcorn-Time-${PV}-3-Linux-64.tar.xz )"
+
+VERSION=$(get_version_component_range 1-3)
+PATCH=$(get_version_component_range 4)
+
+
+SRC_URI="x86?   ( http://mirror01.ptn.sh/build/Popcorn-Time-${VERSION}-${PATCH}-Linux-32.tar.xz )
+		 amd64? ( http://mirror01.ptn.sh/build/Popcorn-Time-${VERSION}-${PATCH}-Linux-64.tar.xz )"
 
 LICENSE="GPL-3"
 SLOT="0"
