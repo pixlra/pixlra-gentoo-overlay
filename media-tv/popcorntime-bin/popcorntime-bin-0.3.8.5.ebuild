@@ -38,7 +38,7 @@ src_install() {
 
 
   insinto /opt/${PN}
-  doins package.json icudtl.dat
+  doins package.nw icudtl.dat nw.pak
   doins -r src node_modules locales
 
 
