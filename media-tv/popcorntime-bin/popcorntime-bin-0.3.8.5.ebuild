@@ -33,23 +33,23 @@ S="${WORKDIR}"
 
 src_install() {
 
-	exeinto /opt/${PN}
-	doexe Popcorn-Time libffmpegsumo.so nw.pak package.json
+  exeinto /opt/${PN}
+  doexe Popcorn-Time libffmpegsumo.so nw.pak package.nw
 
 
-    insinto /opt/${PN}
-	doins package.json icudtl.dat
-	doins -r src node_modules locales
+  insinto /opt/${PN}
+  doins package.json icudtl.dat
+  doins -r src node_modules locales
 
 
-	dosym /$(get_libdir)/libudev.so.1 /opt/${PN}/libudev.so.0
-	make_wrapper ${PN} ./Popcorn-Time /opt/${PN} /opt/${PN} /opt/bin
+  dosym /$(get_libdir)/libudev.so.1 /opt/${PN}/libudev.so.0
+  make_wrapper ${PN} ./Popcorn-Time /opt/${PN} /opt/${PN} /opt/bin
 
-	insinto /usr/share/applications
-	doins "${FILESDIR}"/${PN}.desktop
+  insinto /usr/share/applications
+  doins "${FILESDIR}"/${PN}.desktop
 
-	insinto /usr/share/pixmaps
-	doins "${FILESDIR}"/${PN}.png
+  insinto /usr/share/pixmaps
+  doins "${FILESDIR}"/${PN}.png
 }
 
 pkg_postinst() {
