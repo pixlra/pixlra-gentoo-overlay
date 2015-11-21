@@ -44,8 +44,6 @@ REQUIRED_USE="
   ?? ( qt5 qt4 )
 "
 
-CMAKE_IN_SOURCE_BUILD=1
-
 src_configure() {
   local mycmakeargs=(
     $(cmake-utils_use_use cpu_flags_x86_sse SSE) # use SSE
