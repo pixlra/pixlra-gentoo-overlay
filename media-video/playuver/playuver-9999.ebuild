@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
 
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS=""
 
 X86_CPU_FEATURES="cpu_flags_x86_sse"
-IUSE="+qt5 -qt4 ffmpeg opencv $X86_CPU_FEATURES"
+IUSE="+qt5 -qt4 ffmpeg opencv -static-libs $X86_CPU_FEATURES"
 
 
 DEPEND="
@@ -44,13 +44,15 @@ REQUIRED_USE="
   ?? ( qt5 qt4 )
 "
 
+CMAKE_IN_SOURCE_BUILD=1
 
 src_configure() {
   local mycmakeargs=(
     $(cmake-utils_use_use cpu_flags_x86_sse SSE) # use SSE
-    $(cmake-utils_use_use qt4) # use qt5
+    $(cmake-utils_use_use qt4) # use qt4
     $(cmake-utils_use_use ffmpeg) # support ffmpeg
     $(cmake-utils_use_use opencv) # support opencv
+    $(cmake-utils_use_use static-libs STATIC) # build static libs
   )
   cmake-utils_src_configure
 }
