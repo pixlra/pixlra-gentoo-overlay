@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,12 +21,12 @@ DEPEND="
 	dev-qt/qtgui:4
 	dev-qt/qthelp:4
 	app-text/poppler[qt4]
-  kde? (
-    kde-base/kdelibs
-  )
-  virtual/latex-base
-  dev-texlive/texlive-latexextra
-  dev-tex/pgf
+	kde? (
+		kde-base/kdelibs
+	)
+	virtual/latex-base
+	dev-texlive/texlive-latexextra
+	dev-tex/pgf
 "
 RDEPEND="${DEPEND}"
 
@@ -35,27 +35,26 @@ DOCS="Changelog TODO"
 S="${WORKDIR}/${PN}"
 
 src_configure() {
-  if use kde; then
-    cmake-utils_src_configure
-  else
-    KDECONFIG="CONFIG-=usekde"
-    eqmake4 qtikz.pro "CONFIG+=nostrip" "$KDECONFIG"
-  fi
+	if use kde; then
+		cmake-utils_src_configure
+	else
+		KDECONFIG="CONFIG-=usekde"
+		eqmake4 qtikz.pro "CONFIG+=nostrip" "$KDECONFIG"
+	fi
 }
 
 src_compile() {
-    if use kde; then
-      cmake-utils_src_compile
-    else
-      default
-    fi
+		if use kde; then
+			cmake-utils_src_compile
+		else
+			default
+		fi
 }
 
 src_install() {
-    if use kde; then
-      cmake-utils_src_install
-    else
-      emake INSTALL_ROOT="${D}" PREFIX="${EPREFIX}/usr" install
-    fi
+		if use kde; then
+			cmake-utils_src_install
+		else
+			emake INSTALL_ROOT="${D}" PREFIX="${EPREFIX}/usr" install
+		fi
 }
-

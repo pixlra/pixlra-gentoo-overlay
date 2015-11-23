@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
 
@@ -18,36 +18,36 @@ KEYWORDS="~amd64"
 IUSE="+qt5 -qt4 ffmpeg opencv"
 
 DEPEND="
-  qt5? (
-    dev-qt/qtcore:5
-    dev-qt/qtgui:5
-    dev-qt/qtwidgets:5
-    dev-qt/qtprintsupport:5
-    dev-qt/qtdbus:5
-    dev-qt/qtconcurrent:5
-  )
-  qt4? (
-    dev-qt/qtcore:4
-    dev-qt/qtgui:4
-    dev-qt/qtdbus:4
-  )
-  ffmpeg? ( virtual/ffmpeg )
-  opencv? ( qt5? ( media-libs/opencv[-qt4] ) !qt5? ( media-libs/opencv[-qt5] ) )
+	qt5? (
+		dev-qt/qtcore:5
+		dev-qt/qtgui:5
+		dev-qt/qtwidgets:5
+		dev-qt/qtprintsupport:5
+		dev-qt/qtdbus:5
+		dev-qt/qtconcurrent:5
+	)
+	qt4? (
+		dev-qt/qtcore:4
+		dev-qt/qtgui:4
+		dev-qt/qtdbus:4
+	)
+	ffmpeg? ( virtual/ffmpeg )
+	opencv? ( qt5? ( media-libs/opencv[-qt4] ) !qt5? ( media-libs/opencv[-qt5] ) )
 "
 
 RDEPEND="${DEPEND}"
 
 REQUIRED_USE="
-  ?? ( qt5 qt4 )
+	?? ( qt5 qt4 )
 "
 
 # S="${WORKDIR}/${PN}"
 
 src_configure() {
-  local mycmakeargs=(
-    $(cmake-utils_use_use qt4) # use qt5
-    $(cmake-utils_use_use ffmpeg) # support ffmpeg
-    $(cmake-utils_use_use opencv) # support opencv
-  )
-  cmake-utils_src_configure
+	local mycmakeargs=(
+		$(cmake-utils_use_use qt4) # use qt5
+		$(cmake-utils_use_use ffmpeg) # support ffmpeg
+		$(cmake-utils_use_use opencv) # support opencv
+	)
+	cmake-utils_src_configure
 }
