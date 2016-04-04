@@ -38,5 +38,5 @@ src_configure() {
 	local mycmakeargs=(
 		-DLIBMNL_INCLUDE_DIRS=/usr/include/libmnl
 	)
-	cmake-utils_src_configure
+	kde5_src_configure
 }
