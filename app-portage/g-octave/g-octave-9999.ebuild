@@ -4,14 +4,14 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1 git-r3
 
 DESCRIPTION="A tool that generates and installs ebuilds for Octave-Forge"
 HOMEPAGE="http://www.g-octave.org/"
 SRC_URI=""
-EGIT_REPO_URI="https://github.com/rafaelmartins/g-octave.git"
+EGIT_REPO_URI="https://github.com/jfmcarreira/g-octave.git"
 
 LICENSE="GPL-2"
 SLOT="0"
