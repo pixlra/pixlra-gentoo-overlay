@@ -12,8 +12,7 @@ LICENSE="GPL-2"
 EGIT_REPO_URI="https://github.com/jfmcarreira/ktoshiba.git"
 
 SLOT="5"
-KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+KEYWORDS=""
 
 RDEPEND="
 	$(add_qt_dep qtcore)
