@@ -16,8 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-
-
 DEPEND="
 	|| ( dev-python/PyQt4[${PYTHON_USEDEP}] dev-python/PyQt5[${PYTHON_USEDEP}] )
 	dev-python/spyder[${PYTHON_USEDEP}]
