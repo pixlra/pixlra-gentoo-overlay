@@ -11,7 +11,7 @@ HOMEPAGE="http://ktoshiba.sourceforge.net/"
 EGIT_REPO_URI="https://github.com/jfmcarreira/ktoshiba.git"
 LICENSE="GPL-2"
 
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="
