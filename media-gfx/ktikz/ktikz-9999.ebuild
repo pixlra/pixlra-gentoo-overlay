@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,7 +22,7 @@ DEPEND="
 	dev-qt/qthelp:4
 	app-text/poppler[qt4]
 	kde? (
-		kde-base/kdelibs
+		kde-frameworks/kdelibs
 	)
 	virtual/latex-base
 	dev-texlive/texlive-latexextra
