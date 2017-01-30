@@ -1,13 +1,13 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit eutils versionator
 
-RNAME="luna"
-SR=SR2
+RNAME="neon"
+SR=$(get_version_component_range 3 $PV)
 
 DESCRIPTION="Eclipse IDE for C/C++"
 HOMEPAGE="http://www.eclipse.org"
@@ -20,8 +20,8 @@ SRC_URI="
 "
 
 LICENSE="EPL-1.0"
-SLOT="4.4"
-KEYWORDS="~amd64 ~x86"
+SLOT="4.6"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
