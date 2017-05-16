@@ -44,6 +44,7 @@ DOCS="Changelog TODO"
 src_prepare() {
 	# correct the qcollectiongenerator binary
 	sed -ie 's%#QCOLLECTIONGENERATORCOMMAND = qcollectiongenerator%QCOLLECTIONGENERATORCOMMAND = /usr/lib/qt5/bin/qcollectiongenerator%g' qmake/qtikzconfig.pri || die
+	eapply_user
 }
 
 src_configure() {
