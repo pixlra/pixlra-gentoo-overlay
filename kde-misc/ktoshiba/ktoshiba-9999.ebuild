@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -15,6 +14,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
+	$(add_plasma_dep plasma-workspace)
 	$(add_frameworks_dep kauth)
 	$(add_frameworks_dep kcmutils)
 	$(add_frameworks_dep kconfig)
