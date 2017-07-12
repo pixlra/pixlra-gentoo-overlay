@@ -7,14 +7,13 @@ inherit eutils cmake-utils qmake-utils git-r3
 
 DESCRIPTION="A QT5-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
-
-EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
-EGIT_BRANCH="frameworks"
-
 LICENSE="GPL-2"
 SLOT="5"
 KEYWORDS=""
-IUSE="+kde +doc -debug"
+IUSE="ktexteditor kde +doc -debug"
+
+EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
+EGIT_BRANCH="testing"
 
 DEPEND="
 	dev-qt/qtcore:5
@@ -30,6 +29,7 @@ DEPEND="
 		kde-frameworks/kiconthemes
 		kde-frameworks/kdelibs4support
 	)
+	ktexteditor? ( kde-frameworks/ktexteditor )
 	virtual/latex-base
 	dev-texlive/texlive-latexextra
 	dev-tex/pgf
@@ -48,6 +48,9 @@ src_prepare() {
 
 src_configure() {
 	if use kde; then
+		local mycmakeargs=(
+			$(cmake-utils_use_use ktexteditor )
+		)
 		cmake-utils_src_configure
 	else
 		KDECONFIG="CONFIG-=usekde"
@@ -62,7 +65,7 @@ src_compile() {
 		if use kde; then
 			cmake-utils_src_compile
 		else
-			default
+			emake
 		fi
 }
 
