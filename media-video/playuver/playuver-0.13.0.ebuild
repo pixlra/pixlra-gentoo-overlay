@@ -45,11 +45,11 @@ REQUIRED_USE="
 
 src_configure() {
 	local mycmakeargs=(
-		$(cmake-utils_use_use cpu_flags_x86_sse SSE) # use SSE
-		$(cmake-utils_use_use qt4) # use qt4
-		$(cmake-utils_use_use ffmpeg) # support ffmpeg
-		$(cmake-utils_use_use opencv) # support opencv
-		$(cmake-utils_use_use static-libs STATIC) # build static libs
+		-DUSE_SSE=$(usex cpu_flags_x86_sse)
+		-DUSE_QT4=$(usex qt4)
+		-DUSE_FFMPEG=$(usex ffmpeg)
+		-DUSE_OPENCV=$(usex opencv)
+		-DUSE_STATIC=$(usex static-libs)
 	)
 	cmake-utils_src_configure
 }
