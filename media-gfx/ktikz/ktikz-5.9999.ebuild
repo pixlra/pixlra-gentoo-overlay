@@ -49,7 +49,7 @@ src_prepare() {
 src_configure() {
 	if use kde; then
 		local mycmakeargs=(
-			$(usex ktexteditor )
+			-DKTIKZ_USE_KTEXTEDITOR=$(usex ktexteditor )
 		)
 		cmake-utils_src_configure
 	else
