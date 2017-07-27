@@ -46,14 +46,14 @@ src_install() {
 
 	dohtml -r readme/*
 
-	cp "${FILESDIR}"/eclipserc-bin-${SLOT} "${T}" || die
-	cp "${FILESDIR}"/eclipse-bin-${SLOT} "${T}" || die
+	cp "${FILESDIR}"/eclipserc-bin "${T}/eclipserc-bin-${SLOT} " || die
+	cp "${FILESDIR}"/eclipse-bin "${T}/eclipse-bin-${SLOT}" || die
 	sed "s@%SLOT%@${SLOT}@" -i "${T}"/eclipse{,rc}-bin-${SLOT} || die
 
 	insinto /etc
-	newins "${T}"/eclipserc-bin eclipserc-bin-${SLOT}
+	newins "${T}"/eclipserc-bin-${SLOT} eclipserc-bin-${SLOT}
 
-	newbin "${T}"/eclipse-bin eclipse-cpp-${SLOT}
+	newbin "${T}"/eclipse-bin-${SLOT} eclipse-cpp-${SLOT}
 	make_desktop_entry "eclipse-cpp-${SLOT}" "Eclipse ${PV}" "${dest}/icon.xpm" "Development;IDE"
 
 }
