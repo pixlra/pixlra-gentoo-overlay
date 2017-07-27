@@ -46,7 +46,7 @@ src_install() {
 
 	dohtml -r readme/*
 
-	cp "${FILESDIR}"/eclipserc-bin "${T}/eclipserc-bin-${SLOT} " || die
+	cp "${FILESDIR}"/eclipserc-bin "${T}/eclipserc-bin-${SLOT}" || die
 	cp "${FILESDIR}"/eclipse-bin "${T}/eclipse-bin-${SLOT}" || die
 	sed "s@%SLOT%@${SLOT}@" -i "${T}"/eclipse{,rc}-bin-${SLOT} || die
 
