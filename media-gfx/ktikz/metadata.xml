@@ -7,7 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="kde">Using KDE libs to generate the graphic interface</flag>
-    <flag name="ktexteditor">Use KDE KTextEditor framework</flag>
+		<flag name="ktexteditor">Use KDE KTextEditor framework</flag>
 	</use>
 </pkgmetadata>
 

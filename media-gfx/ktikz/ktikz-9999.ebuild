@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit eutils cmake-utils qmake-utils git-2
+inherit eutils cmake-utils qmake-utils git-r3
 
 DESCRIPTION="A QT5-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
