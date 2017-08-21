@@ -3,14 +3,12 @@
 
 EAPI=6
 
-inherit eutils cmake-utils git-r3
+inherit eutils cmake-utils
 
-DESCRIPTION="plaYUVer is an open-source QT based raw video player"
+DESCRIPTION="PlaYUVer is an open-source QT based raw video player"
 HOMEPAGE="https://github.com/pixlra/playuver"
+SRC_URI="https://github.com/pixlra/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
-
-EGIT_REPO_URI="https://github.com/pixlra/playuver.git"
-EGIT_COMMIT="${PV}"
 
 SLOT=0
 KEYWORDS="~amd64"
