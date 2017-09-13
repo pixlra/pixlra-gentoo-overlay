@@ -27,7 +27,6 @@ DEPEND="
 		kde-frameworks/ktexteditor
 		kde-frameworks/kparts
 		kde-frameworks/kiconthemes
-		kde-frameworks/kdelibs4support
 	)
 	ktexteditor? ( kde-frameworks/ktexteditor )
 	virtual/latex-base
