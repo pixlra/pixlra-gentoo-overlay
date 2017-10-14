@@ -10,10 +10,10 @@ HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
 LICENSE="GPL-2"
 SLOT="5"
 KEYWORDS=""
-IUSE="ktexteditor kde +doc -debug"
+IUSE="kde +doc -debug"
 
 EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
-EGIT_BRANCH="testing"
+EGIT_BRANCH="frameworks"
 
 DEPEND="
 	dev-qt/qtcore:5
@@ -28,7 +28,6 @@ DEPEND="
 		kde-frameworks/kparts
 		kde-frameworks/kiconthemes
 	)
-	ktexteditor? ( kde-frameworks/ktexteditor )
 	virtual/latex-base
 	dev-texlive/texlive-latexextra
 	dev-tex/pgf
@@ -47,9 +46,6 @@ src_prepare() {
 
 src_configure() {
 	if use kde; then
-		local mycmakeargs=(
-			-DKTIKZ_USE_KTEXTEDITOR=$(usex ktexteditor )
-		)
 		cmake-utils_src_configure
 	else
 		KDECONFIG="CONFIG-=usekde"
