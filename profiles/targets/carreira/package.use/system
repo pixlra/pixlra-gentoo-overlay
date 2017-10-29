@@ -1,6 +1,0 @@
-##################################################
-# System
-##################################################
-sys-libs/gpm static-libs
-dev-libs/glib static-libs
-sys-apps/util-linux static-libs

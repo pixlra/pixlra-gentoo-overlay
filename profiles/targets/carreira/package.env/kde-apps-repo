@@ -1,7 +1,0 @@
-# Fetch kde throught HTTP
-kde-apps/* git_mirror_http.conf
-kde-misc/* git_mirror_http.conf
-dev-util/kdev* git_mirror_http.conf
-app-editors/kile git_mirror_http.conf
-media-sound/amarok git_mirror_http.conf
-
