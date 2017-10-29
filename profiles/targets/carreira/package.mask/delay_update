@@ -1,0 +1,11 @@
+##################################################
+# package.mask - delay update
+##################################################
+
+# X2GO
+=net-misc/nx-3.5.0.32
+>=net-misc/x2goclient-4.1
+
+# Bugs
+>media-libs/freetype-2.8
+=net-print/cups-2.2.4

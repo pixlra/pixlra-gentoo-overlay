@@ -1,0 +1,7 @@
+##################################################
+# Accept live apps
+##################################################
+media-video/playuver **
+media-video/playuver-devel **
+app-portage/g-octave **
+kde-misc/ktoshiba::carreira **

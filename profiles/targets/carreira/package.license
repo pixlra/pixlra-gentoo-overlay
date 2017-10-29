@@ -1,0 +1,9 @@
+##################################################
+# Package.license
+##################################################
+www-client/google-chrome* google-chrome
+www-plugins/google-talkplugin Google-TOS
+dev-java/oracle-j*-bin Oracle-BCLA-JavaSE
+net-misc/teamviewer TeamViewer
+sci-misc/mendeleydesktop Mendeley-terms
+

@@ -1,0 +1,15 @@
+##################################################
+# KDE 5 Live Apps
+##################################################
+
+## General
+media-sound/amarok **
+app-text/kbibtex **
+
+## Kopete
+kde-apps/kopete:5 **
+kde-apps/libkleo:5 **
+kde-apps/kcontacts:5 **
+kde-apps/kidentitymanagement:5 **
+kde-apps/kpimtextedit:5 **
+

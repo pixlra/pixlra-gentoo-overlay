@@ -1,0 +1,9 @@
+##################################################
+# package.use - Qt installation
+##################################################
+# Qt5
+dev-qt/qtmultimedia:5 qml -pulseaudio
+dev-qt/qtquickcontrols widgets
+dev-qt/qtscript scripttools
+dev-qt/qtwebkit:5 widgets printsupport
+

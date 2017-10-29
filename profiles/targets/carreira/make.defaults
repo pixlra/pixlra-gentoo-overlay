@@ -1,0 +1,68 @@
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+############################################################
+#### Compiler FLAGS
+CFLAGS="-O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+
+CHOST="x86_64-pc-linux-gnu"
+
+############################################################
+#### Portage Options
+PORTAGE_ELOG_CLASSES="log warn error"
+PORTAGE_ELOG_SYSTEM="save"
+
+DISTDIR=/var/gentoo/distfiles
+PKGDIR=/var/gentoo/packages
+RPMDIR=/var/gentoo/rpm
+
+PORTAGE_TMPDIR="/tmp"
+PORTAGE_NICENESS="19"
+
+FEATURES="${FEATURES} parallel-fetch buildpkg splitdebug userpriv"
+#FEATURES="${FEATURES} distcc"
+#FEATURES="${FEATURES} ccache"
+#CCACHE_SIZE="5G"
+#CCACHE_DIR="/tmp/ccache"
+
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --jobs 2 --with-bdeps=y --keep-going --verbose --quiet-fail"
+
+############################################################
+#### FLAGS
+## System
+USE="${USE} icu consolekit elogind dbus policykit udev udisks -systemd -ldap"
+
+## GPU
+USE="${USE} intel vaapi opengl dri sna egl" # gles gles2"
+
+## Hardware
+USE="${USE} laptop lm_sensors threads acpi apm dev usb btrfs pcsc-lite libinput"
+
+## Networking
+USE="${USE} bluetooth networkmanager rdesktop vnc"
+
+## GUI
+USE="${USE} X qt5 -qt4 kde wayland -gtk -gtk3 -gnome"
+USE="${USE} -semantic-desktop"
+
+## Tools
+USE="${USE} cmake git"
+USE="${USE} vim-syntax bash-completion gnuplot"
+
+## Fonts
+USE="${USE} fontconfig truetype type1 cleartype corefonts"
+
+## Multimedia
+USE="${USE} pulseaudio alsa gstreamer"
+USE="${USE} v4l ffmpeg rtmp rtsp avcodec avformat -libav opencv pdf"
+USE="${USE} mpeg mp4 matroska x264 x265 xvid" # Video
+USE="${USE} mp3" # Audio
+USE="${USE} mng exif gif jpeg png svg tiff"  # Images
+
+ACCEPT_KEYWORDS="~amd64"
+
+L10N="en en_GB en-GB pt pt_PT pt-PT"
+LINGUAS="$L10N"
+
+INPUT_DEVICES="libinput"
