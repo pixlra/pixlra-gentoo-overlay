@@ -9,7 +9,7 @@ DESCRIPTION="Middleware do Cartao de Cidadao"
 HOMEPAGE="https://www.cartaodecidadao.pt"
 LICENSE="Licence-Cartao-Cidadao-App"
 
-SRC_URI="amd64? ( https://www.autenticacao.gov.pt/documents/10179/11962/Aplica%C3%A7%C3%A3o+do+Cart%C3%A3o+de+Cidad%C3%A3o+%28Linux+-+Ubuntu+-+64+bits%29%20%28v.1.61.0%29%20Jan+2016/013924f5-dee7-4eeb-ac82-ef81e3db1dec )"
+SRC_URI="https://www.autenticacao.gov.pt/documents/10179/11962/Aplica%C3%A7%C3%A3o+do+Cart%C3%A3o+de+Cidad%C3%A3o+%28Linux+-+Ubuntu+-+64+bits%29%20%28v.1.61.0%29%20Jan+2016/013924f5-dee7-4eeb-ac82-ef81e3db1dec"
 
 SLOT="0"
 KEYWORDS="~amd64"

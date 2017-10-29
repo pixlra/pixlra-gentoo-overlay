@@ -50,7 +50,8 @@ app-office/texstudio qt5 -qt4
 app-portage/layman mercurial bazaar
 
 # Libre Office GTK
-app-office/libreoffice java -gtk -kde -bluetooth python_targets_python3_4 python_single_target_python3_4?
+app-office/libreoffice java -gtk -kde -bluetooth
+#app-office/libreoffice python_targets_python3_4 python_single_target_python3_4
 app-office/libreoffice-bin -kde
 
 # Octave
@@ -85,7 +86,8 @@ app-emulation/virtualbox additions extensions
 media-video/vlc postproc upnp
 
 # Wine
-app-emulation/wine* abi_x86_32 -gstreamer staging samba
+app-emulation/wine-vanilla abi_x86_32 -gstreamer samba
+app-emulation/wine-staging abi_x86_32 -gstreamer samba
 virtual/wine abi_x86_32 staging
 
 # Wpa Supplicant

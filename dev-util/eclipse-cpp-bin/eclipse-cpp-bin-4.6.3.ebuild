@@ -20,7 +20,7 @@ SRC_URI="
 
 LICENSE="EPL-1.0"
 SLOT="4.6"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 
 RDEPEND="
