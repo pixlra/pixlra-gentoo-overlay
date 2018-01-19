@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,7 +12,7 @@ SLOT="5"
 KEYWORDS=""
 IUSE="kde +doc -debug"
 
-EGIT_REPO_URI="https://github.com/jfmcarreira/ktikz.git"
+EGIT_REPO_URI="https://github.com/fhackenberger/ktikz.git"
 EGIT_BRANCH="frameworks"
 
 DEPEND="
