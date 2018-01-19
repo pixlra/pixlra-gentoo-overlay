@@ -9,7 +9,8 @@ DESCRIPTION="Autenticacao do Cartao de Cidadao em java"
 HOMEPAGE="https://www.cartaodecidadao.pt"
 LICENSE="Licence-Cartao-Cidadao-App"
 
-SRC_URI="https://autenticacao.gov.pt/fa/ajuda/software/autenticacao.gov.pt.deb"
+SRC_URI="https://autenticacao.gov.pt/fa/ajuda/software/plugin-autenticacao-gov.deb"
+
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
