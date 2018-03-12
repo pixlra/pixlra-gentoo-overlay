@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/pixlra/playuver"
 LICENSE="GPL-2"
 
 EGIT_REPO_URI="https://github.com/pixlra/playuver.git"
-EGIT_BRANCH="develRefactoring"
+EGIT_BRANCH="master"
 
 SLOT=0
 KEYWORDS=""
