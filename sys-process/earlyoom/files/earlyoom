@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+NAME=earlyoom
+EARLYOOM_EXEC=/usr/bin/$NAME
+EARLYOOM_ARGS="-k"
+LOGFILE=/var/log/$NAME.log
+PIDFILE=/var/run/$NAME.pid
+SCRIPTNAME=/etc/init.d/$NAME
+
+depend() {
+	need localmount
+}
+
+start() {
+	ebegin "Starting earlyoom"
+	start-stop-daemon --start --quiet --background --exec $EARLYOOM_EXEC -- $EARLYOOM_ARGS
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping earlyoom"
+	start-stop-daemon --stop --quiet --exec $EARLYOOM_EXEC
+	eend $?
+}
+
