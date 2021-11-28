@@ -3,20 +3,18 @@
 
 EAPI=7
 
-inherit eutils cmake git-r3
+inherit eutils cmake
 
 DESCRIPTION="Calyp is an open-source QT based raw video player"
 HOMEPAGE="https://github.com/pixlra/calyp"
+SRC_URI="https://github.com/pixlra/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 
-EGIT_REPO_URI="https://github.com/pixlra/calyp.git"
-EGIT_BRANCH="master"
-
 SLOT=0
-KEYWORDS=""
+KEYWORDS="~amd64"
 
 X86_CPU_FEATURES="cpu_flags_x86_sse"
-IUSE="+qt5 -qt4 ffmpeg opencv -static-libs $X86_CPU_FEATURES"
+IUSE="+qt5 ffmpeg opencv -static-libs $X86_CPU_FEATURES"
 
 DEPEND="
 	qt5? (
