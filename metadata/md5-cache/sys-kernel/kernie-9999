@@ -1,12 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=install unpack
-DEPEND=app-shells/bash:0 dev-util/dialog app-admin/eclean-kernel app-portage/eix >=dev-vcs/git-1.8.2.1[curl]
+DEPEND=app-shells/bash:0 dev-util/dialog app-admin/eclean-kernel app-portage/eix
 DESCRIPTION=Kernie - Kernel Genie, is a Gentoo kernel manager
-EAPI=6
+EAPI=8
 HOMEPAGE=https://github.com/jpataias/kernie
 INHERIT=git-r3
 LICENSE=GPL-3
 PROPERTIES=live
 RDEPEND=app-shells/bash:0 dev-util/dialog app-admin/eclean-kernel app-portage/eix
 SLOT=0
-_eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
-_md5_=94460702ddff12240bee306f826b6337
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
+_md5_=369d30f30b7ccb6abae139401fd55b15
